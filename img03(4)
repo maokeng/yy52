@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="https://www.shanghaitang.cn/" />
+		<title>东魅|上海滩</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="Description" content="Shanghai Tang offers a unique women and men's fashion. Discover a new elegance, from clothing to accessories and home decoration." />
+		
+
+		<link href="/assets/components/theme/css/fontcustom.css?v=20161225" rel="stylesheet" />
+		<link href="/assets/components/theme/css/styles.css?v=20170303" rel="stylesheet" />
+		<link href="/assets/components/theme/css/fonts/open-sans/font.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body itemscope itemtype="http://schema.org/WebPage" >
+		<a href="#content" class="sr-only">Skip to main content</a>
+		
+
+
+<div id="nav-wrapper">
+	<!--top ad -->
+	<div id="nav-area">
+		<span class="sValue" data-snippet="Cart.getPromoBar"></span>
+		<!-- default header -->
+		<nav id="header" class="navbar hidden-print header sht" role="navigation">
+			<div class="navbar-inverse">
+				<!-- desktop view -->
+				<ul class="nav navbar-nav navbar-left hidden-xs">
+					<li class="nav-link-top">
+						<a class="sLink btn btn-link collapsed" href="/locate-a-store">
+							<i class="icon-findstore"></i>
+							<span>查找店铺</span>
+						</a>
+					</li>
+
+					<li class="nav-link-top">
+						<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#header-callmeback" data-parent="#header-sections" aria-expanded="false">
+							<i class="icon-callback"></i>
+							<span>回电服务</span>
+						</a>
+					</li>
+
+					<li class="sCondition nav-link-top" data-snippet="Cart.isCatalog" data-no="display"  style="display:none;">
+						<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#customer-info" data-parent="#header-sections">
+							<i class="icon-account"></i>
+							<span>我的账户</span>
+						</a>
+					</li>
+
+				</ul>
+				<ul class="desktop nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a id="storelink" class="btn-link collapsed" data-toggle="collapse" data-target="#header-countries" data-parent="#header-sections">
+							<!--<i class="icon-local active-color"></i>-->
+							<span class="text-bold">店铺位置</span>
+							<span class="uppercase sValue text-primary" data-snippet="Cart.getStoreName"></span> | 
+							<span class="sValue text-primary" data-snippet="Cart.getCurrencySymbol"></span> |
+							<span class="uppercase sValue text-primary" data-snippet="Cart.getLocaleName"></span>
+							<span class="sValue hidden" data-snippet="CookieLaw"></span>
+						</a>
+					</li>
+					<li class="sCondition nav-link-top" data-snippet="Cart.isCatalog" data-no="display" style="display:none;">
+						<a class="sLink btn btn-link collapsed" href="/shopping-bag">
+							<i class="icon-shopbag"></i>
+							&nbsp;<span class="sValue" data-snippet="Cart.getShoppingBagCount" id="header-shopping-bag-count"></span>
+						</a>
+					</li>
+
+					<li class="nav-link-top">
+						<a class="nav-link-top-last btn btn-link collapsed" data-toggle="collapse" data-target="#search-form" data-parent="#header-sections">
+							<i class="glyphicon glyphicon-search heavy-weight"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<span id="callback-popover" class="signin well pull-right hidden"></span>
+			<span id="loading-indicator" class="glyphicon glyphicon-sort pull-right hidden"></span>
+
+			<!-- callapsable content to display country selection, user profile, signin/register -->
+			<div id="header-sections" class="accordion collapse-group panel container">
+				<div class="collapse-group panel">
+					<!-- mobile view -->
+					<div class="navbar-header sht visible-xs">
+
+
+						<button type="button" class="navbar-toggle btn btn-default navbar-btn sht collapsed" data-toggle="collapse" data-target="#navbar-nav-mobile" data-parent="#header-sections">
+							<span class="sr-only">Toggle导航</span>
+							<i class="icon-menu icon-big"></i>
+						</button>
+
+						<div class="sCondition" data-snippet="Cart.isCatalog" data-no="display" style="display:none;">
+							<a href="/shopping-bag" class="sLink navbar-toggle btn btn-default navbar-btn sht collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">购物袋</span>
+								<i class="icon-shopbag icon-big"></i>
+							</a>
+						</div>
+
+						<a href="/locate-a-store" class="navbar-toggle btn btn-default navbar-btn sht collapsed">
+							<span class="sr-only">回电服务</span>
+							<i class="icon-findstore"></i>
+						</a>
+
+						<!-- mobile brand logo -->
+						<a class="sLink navbar-brand icon-logo visible-xs" href="/">
+							<i class="text-hide">上海滩</i>
+						</a>
+					</div>
+
+					<!-- call me back -->
+					<div id="header-callmeback" class="collapse header-callmeback header-sub container">
+						<div class="inner-content container clearfix">
+	<!-- signin section -->
+	<div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-1 col-md-offset-1 col-sm-offset-0 vertical-line">
+		<h4 class="margin-top-20">回电服务</h4>
+		<p>请输入您的全名及电话号码（包括国家/区号）。我们将尽快给您回电。</p>
+
+		<div id="callback-form-error"></div>
+		<form action="#" method="post" id="callbackform" class="form-horizontal 1" role="form">
+			<!-- email address -->
+			<div class="form-group">
+				<label for="name" class="col-sm-2 control-label">姓名</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="contact-name"  name="name" tabindex="1" required="required" />
+				</div>
+			</div>
+
+			<!-- password -->
+			<div class="form-group">
+				<label for="phone" class="col-sm-2 control-label">电话号码</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="contact-phone" name="phone"  tabindex="2" required="required" />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-lg-5 col-sm-offset-2">
+					<button type="submit" id="btncallmeback" class="btn btn-ghost">发送</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-lg-5 col-md-5 col-sm-6">
+		<!--<div class="horizontal-line visible-xs">&nbsp;</div>-->
+		<h4 class="margin-top-20">联系我们的客户服务部</h4>
+		<div class="margin-top-20 hidden-xs">&nbsp;</div>
+		<ul class="list-unstyled">
+			<li class="sValue" data-snippet="Cart.getContactNamePhone"></li>
+			<li><span>电子邮件</span> <a class="sValue" href="mailto:" data-snippet="Cart.getContactEmail" data-action="+mailto"></a></li>
+			<li>&nbsp;</li>
+		</ul>
+		<h4>帮助及资讯</h4>
+		<p><a class="sLink" href="/help-cn/#customer-care">在此处查阅我们的帮助部分</a></p>
+	</div>
+	<div class="margin-bottom-15 visible-xs"></div>
+</div>
+<div class="btn-primary close-btn visible-xs" data-toggle="collapse" data-target=".header-callmeback" data-parent="#header-sections"><i class="icon-arrow-up"></i></div>
+
+					</div>
+
+					<!-- country selection section -->
+					<div id="header-countries" class="collapse header-countries header-sub container">
+						<div class="inner-content container clearfix">
+	<div class="col-lg-10 col-lg-offset-1">
+		<p>
+			您正在浏览我们 
+			<strong><span class="sValue" data-snippet="Cart.getStoreName"></span></strong> 
+			<span class="sCondition" data-snippet="Cart.isCatalog" data-param="text=true" data-yes="display"  style="display: none;">catalog</span> 
+			网址
+		</p>
+
+		<div class="form-horizontal">
+			<div class="row">
+				<label class="col-lg-3 col-sm-3 control-label">
+					选择您的 
+					<span class=" active-color">发货地</span> 
+					国家/货币**
+				</label>
+
+				<div class="sValue col-lg-4 col-sm-4 col-xs-10 margin-top-10" data-snippet="Cart.getCountryList" data-param="id=country_list_select;currency=true;useDefault=true">
+				</div>
+				
+			</div>
+
+			<div class="row">
+				<label class="col-lg-3 col-sm-3 control-label">
+					选择您的 
+					<span class="active-color">语言</span> 
+					偏好
+				</label>
+
+				<div class="sValue col-lg-4 col-sm-4 col-xs-10 margin-top-10" data-snippet="Cart.getLocaleList" data-param="id=change_language_select">
+				</div>
+
+				<div class="col-lg-3 col-sm-3 col-xs-12 margin-top-10">
+					<button class="btn btn-ghost" id='change_settings'>
+						确认选择
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div id='store_change_info'>
+			<p class="margin-top-15">您的订单计费及收费国家 <strong id='currency_name'>s</strong></p>
+		</div>
+
+		<p id='store_change_catalog' style="display: none;" class="margin-top-15">
+			<small>* 请注意：您还不能在此地区使用在线购物功能。</small>
+		</p>
+
+		<p class="margin-top-15"><small>** 更改区域可能会更改货币及价格</small>
+		</p>
+
+		<div class="margin-top-15"></div>
+	</div>
+</div>
+<div class="btn-primary close-btn visible-xs" data-toggle="collapse" data-target="#header-countries" data-parent="#header-sections"><i class="icon-arrow-up"></i></div>
+
+					</div>
+
+
+					<!-- header profile -->
+					<div id="customer-info" class="sValue collapse header-profile header-sub container" data-snippet="Cart.getCustomerInfo">
+					</div>
+
+
+					<div id="search-form" class="collapse header-search header-sub container search-form-box hidden-xs">
+						<div class="inner-content container clearfix">
+	<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+		<div class="search-container">
+			<h4>搜索</h4>
+			<form action="/search-results" class="sLink search" method="GET">
+				<div class="input-group">
+					<input placeholder="输入搜索信息" id="appendedInputButton" name="s" type="text" class="form-control input-small" />
+					<span class="input-group-btn">
+						<button class="btn btn-primary btn-small" type="submit">
+							开始
+						</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+					</div>
+
+					<!-- mobile navigation -->
+					<div id="navbar-nav-mobile" class="collapse navbar-collapse header-sub sht-nav">
+						<div class="inner-content clearfix visible-xs">
+							<div class="row">
+								<div class="col-xs-4">
+									<a class="in-menu-btn btn full navbar-btn sht collapsed" data-toggle="collapse" data-target="#header-callmeback" data-parent="#header-sections" aria-expanded="false">
+										<i class="icon-callback"></i>
+										<span class="tag">回电服务</span>
+									</a>
+								</div>
+								<div class="col-xs-4">
+									<a class="in-menu-btn btn full navbar-btn sht collapsed" data-toggle="collapse" data-target="#header-countries" data-parent="#header-sections">
+										<i class="icon-local"></i>
+										<span class="tag">CHANGE<br/>COUNTRY/CURRENCY</span>
+									</a>
+								</div>
+								<div class="col-xs-4">
+									<a class="in-menu-btn btn full navbar-btn sht collapsed" data-toggle="collapse" data-target="#customer-info" data-parent="#header-sections">
+										<i class="icon-account"></i>
+										<span class="tag">我的账户</span>
+									</a>
+								</div>
+							</div>
+							<h4 class="visible-xs catalogue-header">搜索</h4>
+
+							<!-- Mobile search form -->
+							<div class="visible-xs">
+								<form action="/search-results" class="sLink search" method="GET">
+									<div class="input-group">
+										<input name="s" type="text" placeholder="输入搜索信息" class="form-control input-small" />
+										<span class="input-group-btn">
+											<button class="btn btn-primary btn-small" type="submit">
+												开始
+											</button>
+										</span>
+									</div>
+								</form>
+							</div>
+							<br>
+
+							<h4 class="visible-xs catalogue-header">使用颜色搜索</h4>
+							<ul class="visible-xs list-unstyled sValue search-main-colors" data-snippet="getMainColors"></ul>
+
+							<br>
+							<nav role="navigation">
+
+								<h4 class="visible-xs catalogue-header">主选单</h4>
+								<ul class="sValue nav sht panel-group" id="mob-nav-accordion" data-snippet="Navigation.getHeaderMobile" data-param="request=true">
+								</ul>
+							</nav>
+
+						</div>
+						<div class="btn-primary close-btn visible-xs" data-toggle="collapse" data-target="#navbar-nav-mobile" data-parent="#header-sections"><i class="icon-arrow-up"></i></div>
+					</div>
+				</div>
+			</div>
+			<!-- flyover wells for the loading indicator and the cart -->
+			<div class="product-added-popover-container">
+				<span id="product-added-popover" class="well hidden"></span>
+			</div>
+		</nav>
+	</div>
+</div>
+<!-- desktop brand logo -->
+<div class="brand text-center hidden-xs">
+	<a class="sLink icon-logo" href="/">
+		<i class="text-hide">上海滩</i>
+	</a>
+</div>
+<!-- newsletter lightbox -->
+<div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="newsletterModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i id="icon-close" class="icon-close"></i></button>
+			<div class="modal-header image-header">
+				<img src="/assets/components/landing/img/cropped/cropped_15277_1454579971.jpg" alt="Newsletter Cover">
+			</div>
+			<div class="modal-body clearfix">
+				<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<h3 class="modal-title" id="myModalLabel"><p>NEWSLETTER</p></h3>
+					<p>注册并获取我们的新闻通讯</p>
+				</div>
+			</div>
+			<div class="modal-footer clearfix">
+				<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<button type="button" class="btn btn-primary newsletter-trigger-input">订阅上海滩邮件 >></button>
+					<form class="newsletter_form" id="frmnewsletter" name="frmnewsletter" data-button="#btnnewsletter" style="display: none;" >
+						<div id="newsletter-signup" class="input-group">
+							<div class="row">
+								<div class="col-sm-12">
+									<input required class="input-small form-control" name="newsletterfirstname" type="text" placeholder="姓"/>
+									<input required class="input-small form-control" name="newsletterlastname" type="text" placeholder="名"/>
+									<input required class="input-small form-control" name="newsletteremail" id="newsletter" type="email" placeholder="john@example.com"/>
+									<div class="sValue" data-snippet="Cart.getCountryList" data-param="newsletter=1"></div>
+									<div class="sValue" data-snippet="Cart.getLocaleList" data-param="newsletter=1"></div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-7">
+									<button id="btnnewsletter" data-form="#frmnewsletter" class="btn btn-secondary full" type="submit">Sign Up</button>
+								</div>
+								<div class="col-xs-12 col-sm-5">
+									<a href="/help-cn/#privacy-policy">Privacy Policy</a>
+								</div>
+							</div>
+						</div>
+						<div class="signup-msg"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Size lightbox -->
+<div class="modal fade" id="sizeModal" tabindex="-1" role="dialog" aria-labelledby="sizeModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">尺寸指引</h4>
+			</div>
+			<div class="modal-body">
+				<p>The following charts will help you match the designer's size scheme for this product (indicated in the dropdown) to your usual size.</p>
+				Invalid Product
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- TEMPLATE: MODAL -->
+<div id="template-modal" class="modal fade popupModal" tabindex="-1" role="dialog" style="display: none;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i id="icon-close" class="icon-close"></i></button>
+			<div class="modal-header image-header">
+				<img class="popup-modal-image" src="" alt="Popup Cover">
+			</div>
+			<div class="modal-body clearfix">
+				<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<p class="popup-modal-text"></p>
+				</div>
+			</div>
+			<div class="modal-footer clearfix">
+				<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<a href="" class="btn btn-primary popup-modal-button"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+		
+			<!-- sub-navigation sections -->
+			<div id="navigation-subsections" class="accordion menu">
+				<div class="collapse-group panel">
+								<nav class="container text-center hidden-xs navigation">
+				<div class="row">
+				<ul id="navigation-full" class="nav nav-tabs nav-justified">
+					<!-- Sale navigation -->
+					<li class="header-element">
+						<a href="#" title="Sale" data-toggle="collapse" data-target="#nav-section-276" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">促销<div class="arrow-up">&nbsp;</div></a>
+					</li>
+					<!-- Women navigation -->
+					<li class="header-element">
+						<a href="#" title="Women" data-toggle="collapse" data-target="#nav-section-3" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">女士<div class="arrow-up">&nbsp;</div></a>
+					</li>
+					<!-- Men navigation -->
+					<li class="header-element">
+						<a href="#" title="Men" data-toggle="collapse" data-target="#nav-section-5" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">男士<div class="arrow-up">&nbsp;</div></a>
+					</li>
+					<!-- Accessories navigation -->
+					<li class="header-element">
+						<a href="#" title="Accessories" data-toggle="collapse" data-target="#nav-section-9" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">配饰<div class="arrow-up">&nbsp;</div></a>
+					</li>
+					<!-- Home & Deco navigation -->
+					<li class="header-element">
+						<a href="#" title="Home & Deco" data-toggle="collapse" data-target="#nav-section-7" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">家居装饰<div class="arrow-up">&nbsp;</div></a>
+					</li>
+					<!-- Gifts navigation -->
+					<li class="header-element">
+						<a href="#" title="Gifts" data-toggle="collapse" data-target="#nav-section-13" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">礼品<div class="arrow-up">&nbsp;</div></a>
+					</li>
+					<!-- World of Shanghai Tang navigation -->
+					<li class="header-element">
+						<a href="#" title="World of Shanghai Tang" data-toggle="collapse" data-target="#nav-section-179" data-parent="#navigation-subsections" class="navigation-dropdown main collapsed">上海滩世界<div class="arrow-up">&nbsp;</div></a>
+					</li>
+				</ul>
+				</div>
+			</nav>
+
+								<!--  sub-navigation -->
+			<div id="nav-section-276" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">女士</span></li>
+<li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/view-all-women" title="View all women's sale">查看全部女士促销产品</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/sale/women/20-percent" title="Women 20% off">女士8折产品</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/30-percent" title="Women 30% off">女士7折产品</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/40-percent" title="Women 40% off">女士6折产品</a></li><li><span class="navigation-section-header">男士</span></li>
+<li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/view-all-men" title="View all men's sale">查看全部男士促销产品</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/30-percent" title="Men 30% off">男士7折产品</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men-40-percent" title="Men 40% off">男士6折产品</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">促销—女装</span></li>
+<li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/all-clothing" title="View all women's clothing sale">查看全部女士促销服装</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/dresses" title="Dresses">裙装</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/sale/women/qipaos" title="Qipao dresses">旗袍</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/knitwear" title="Knitwear">针织衫</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/jackets" title="Jackets">夹克</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/coats" title="Coats">外套</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/tops" title="Tops">上衣</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/shirts-blouses" title="Shirts & Blouses">衬衫</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/pants" title="Skirts & Pants">短裙及长裤</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">促销—男装</span></li>
+<li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/view-all-clothing" title="View all men's clothing sale">查看全部男士促销服装</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/shirts" title="Shirts">衬衫</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/sale/men/blazers" title="Blazers">西装外套</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/coats-jackets" title="Coats & Jackets">外套及夹克</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/knitwear" title="Knitwear">针织衫</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/pants" title="Pants">长裤</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/men/polos" title="Polo shirts">Polo衫</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">促销—女士配饰</span></li>
+<li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/view-all-accessories" title="View all women's accessories sale">查看全部女士促销配饰</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/sale/women/handbags" title="Handbags">手提袋</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/clutches" title="Clutches">手包</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/wallets-pouches" title="Wallets & pouches ">钱夹与手拿包</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/Sale/women/belts" title="Belts">腰带</a></li><li><a class="section-link" data-section="Sale" href="/cn-cn/sale/women/squares" title="Silk squares">丝绸方巾</a></li>						</ul>
+					</div>
+				</div>
+			</div>
+			<!--  sub-navigation -->
+			<div id="nav-section-3" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">查看全部</span></li>
+<li><a class="section-link" data-section="Women" href="/cn-cn/women/view-all-clothing" title="View all clothing">查看全部服装</a></li><li><span class="navigation-section-header">新品</span></li>
+<li><a class="section-link" data-section="Women" href="/cn-cn/women/wisteria-edit" title="Wisteria Print - Romantic Blooms">紫藤印花</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/jacky-tsai-capsule" title="Jacky Tsai capsule collection">Jacky Tsai系列产品</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/chinese-blossom-edit" title="Chinese Blossom">中国花卉</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/butterfly-plate-print" title="Butterfly Plate Print">蝴蝶圆盘印花系列</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/prisma-ornaments" title="Prisma Ornaments">棱镜装饰</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/dragon-scale-jacquard-theme" title="Dragon Scale Jacquard Theme">龙鳞提花系列</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/spring-summer/2017" title="Spring Summer 2017 Women's Collection">2017 春夏女士系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">服装</span></li>
+<li><a class="section-link" data-section="Women" href="/cn-cn/women/dresses" title="Dresses">裙装</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/qipaos" title="Qipao dresses">旗袍</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/shirts-and-blouses" title="Shirts & blouses">衬衫</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/tops" title="Tops">上衣</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/polo-shirts" title="Polo shirts">Polo衫</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/Silk-Lining-Cashmere-For-Her" title="Cashmere cardigans with silk lining">羊绒丝绸里衬开衫</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/knitwear" title="Knitwear">针织衫</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/coats" title="Coats">外套</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/jackets" title="Jackets">夹克</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/skirts_pants" title="Skirts & pants">半裙及裤子</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/women/sleepwear" title="Sleepwear">睡衣</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">定制服务</span></li>
+<li><a class="section-link" data-section="Women" href="/cn-cn/magnificent-qipao/spring-summer/2017" title="Limited Edition Evening Dresses 2017">2017限量版礼服</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/magnificent-qipao/autumn-winter/2016" title="Limited Edition Qipaos 2016">2016限量版旗袍</a></li><li><a class="section-link" data-section="Women" href="/cn-cn/the-art-of-tailoring" title="Imperial Tailoring">量身御制系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li class="promo-section-element">
+	<a href="/women/jacky-tsai-capsule" title="Women">
+		<img class="promo-image" src="/assets/components/landing/img/cropped/cropped_19969_1495788154.jpg" alt="Jacky Tsai系列产品"/>
+		<h4 class="promo-text text-center full">Jacky Tsai系列产品</h4>
+		<div class="btn btn-primary full">探索</div>
+	</a>
+</li>
+</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--  sub-navigation -->
+			<div id="nav-section-5" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">查看全部</span></li>
+<li><a class="section-link" data-section="Men" href="/cn-cn/men/view-all-clothing" title="View all clothing">查看全部服装</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/view-all-polo-shirts" title="View all polo shirts">查看全部Polo衫</a></li><li><span class="navigation-section-header">新品上市</span></li>
+<li><a class="section-link" data-section="Men" href="/cn-cn/men/modern-silk-relaxed-tailoring" title="Modern Silk & Relaxed Tailoring">摩登丝质&闲适剪裁</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/refined-freedom" title="Refined Freedom">极简风格</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/de-luxe-spring" title="Resort Chic">闲情雅士</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/spring-summer/2017" title="Spring Summer 2017 Men's Collection">2017 春夏男士系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">服装</span></li>
+<li><a class="section-link" data-section="Men" href="/cn-cn/men/jackets" title="Coats & jackets">外套及夹克</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/blazers" title="Blazers">西装外套</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/knitwear" title="Knitwear">针织衫</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/cashmere-silk-lining-cardigans" title="Cashmere cardigans with silk lining">羊绒丝绸里衬开衫</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/shirt" title="Shirts">衬衫</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/tang-jackets" title="Velvet Tang jackets">丝绒唐装夹克</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/pants" title="Pants">长裤</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/sleepwear" title="Sleepwear">睡衣</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">马球衫</span></li>
+<li><a class="section-link" data-section="Men" href="/cn-cn/men/smart-polo-shirts" title="Smart polo shirts">时尚Polo衫</a></li><li><a class="section-link" data-section="Men" href="/cn-cn/men/polo-shirts-with-patches" title="Team polo shirts">球队标志polo衫</a></li><li><span class="navigation-section-header">专卖</span></li>
+<li><a class="section-link" data-section="Men" href="/cn-cn/men/imperial-collection" title="Imperial Collection for Men">量身御制系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li class="promo-section-element">
+	<a href="/men/smart-polo-shirts" title="Men">
+		<img class="promo-image" src="/assets/components/landing/img/cropped/cropped_18221_1494559550.jpg" alt="Men's Smart Polo Shirts"/>
+		<h4 class="promo-text text-center full">Men's Smart Polo Shirts</h4>
+		<div class="btn btn-primary full">探索</div>
+	</a>
+</li>
+</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--  sub-navigation -->
+			<div id="nav-section-9" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">查看全部</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/view-all-women" title="View all accessories for her">查看全部女士配饰</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/view-all-women" title="View all jewellery">查看所有珠宝饰品</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/view-all-accessories-men" title="View all accessories for him">查看全部男士配饰</a></li><li><span class="navigation-section-header">女士配饰</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/clutches" title="Clutches">手包</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/handbags" title="Handbags">手提袋</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/women-wallets-pouches" title="Wallets & pouches for her">女士钱夹与手拿包</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/women-scarves" title="Scarves for her">女士围巾</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/women-squares" title="Silk squares">丝绸方巾</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/women/belts" title="Belts for her">女士腰带</a></li><li><span class="navigation-section-header">系列</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/naadam-bag" title="Naadam Bag">那达慕皮质包</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/women/cloud-quilted-collection" title="Cloud quilted leather collection">祥云真皮夹棉系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">女士首饰</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/bangles" title="Enamel bangles">珐琅手镯</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/bracelets" title="Bracelets">手镯/手链</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/charms" title="Charms">幸运符</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/rings" title="Rings">戒指</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/necklaces-pendants" title="Necklaces & pendants">项链与吊坠</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/earrings" title="Earrings">耳环</a></li><li><span class="navigation-section-header">系列</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/beaded-deco-collection" title="Beaded deco jewellery collection">串珠装饰珠宝系列</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/ginkgo-collection" title="Ginkgo jewellery collection">银杏珠宝系列</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/fan-collection" title="Fan jewellery collection">折扇珠宝系列</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/bamboo-collection" title="Bamboo jewellery collection">竹 - 首饰系列</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/jewellery/tribal-deco-collection" title="Tribal deco jewellery collection">部落风首饰系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">男士配饰</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/mens-bracelets" title="Bracelets">手镯/手链</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/cufflinks" title="Cufflinks">袖扣</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/bags-for-men" title="Bags & pouches for him">男士包袋及手包</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/men-wallets" title="Wallets for him">男士钱包</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/men-scarves" title="Scarves for him">男士围巾</a></li><li><span class="navigation-section-header">配饰 - 男女两用</span></li>
+<li><a class="section-link" data-section="Accessories" href="/cn-cn/world-of-shanghai-tang/sunglasses" title="Sunglasses">太阳眼镜</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/tech-accessories" title="iPhone cases ">iPhone手机壳</a></li><li><a class="section-link" data-section="Accessories" href="/cn-cn/accessories/umbrellas" title="Umbrellas">伞</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li class="promo-section-element">
+	<a href="/accessories/women-squares" title="Accessories">
+		<img class="promo-image" src="/assets/components/products/images/1AD43Q2/1AD43Q2_EB_00.jpg" alt="Silk Square Scarves"/>
+		<h4 class="promo-text text-center full">Silk Square Scarves</h4>
+		<div class="btn btn-primary full">探索</div>
+	</a>
+</li>
+</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--  sub-navigation -->
+			<div id="nav-section-7" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">装饰</span></li>
+<li><a class="section-link" data-section="Home & Deco" href="/cn-cn/homeware/view-all-decoration" title="View all">查看全部</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/scented-candles" title="Scented candles">香氛蜡烛</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/candle-holders" title="Candle holders">烛台</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/jars" title="Bone china jars">骨瓷罐</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/bone-china-trays" title="Bone china trays">骨瓷托盘</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/world-of-shanghaitang/lacquered-boxes" title="Lacquered boxes">漆盒</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/enamel-boxes" title="Enamel boxes">珐琅盒</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/photo-frames" title="Photo frames">相框</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/photo-albums" title="Photo albums">相册</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/notebooks-pens" title="Notebooks & pens">记事簿和笔</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/bookmarks" title="Bookmarks">书签</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">餐具</span></li>
+<li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/bone-china-plates" title="Bone china decorative plates">骨瓷装饰盘</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/tea-cups-pots" title="Bone china cups & pots">骨瓷茶杯和茶壶</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/chopsticks" title="Chopsticks">筷子</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/drinking-glasses" title="Drinking glasses">饮水杯</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/wine-stoppers" title="Wine stoppers">酒塞</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/coasters" title="Coasters">杯垫</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">上海滩精选品</span></li>
+<li><a class="section-link" data-section="Home & Deco" href="/cn-cn/home/chinese-zodiac-animals" title="Chinese Zodiac collection">中国十二生肖系列</a></li><li><a class="section-link" data-section="Home & Deco" href="/cn-cn/20th-anniversary/jacky-tsai-shanghai-tang-collaboration" title="Shanghai Tang  X  Jacky Tsai">上海滩 x Jacky Tsai</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li class="promo-section-element">
+	<a href="/home/jars" title="Home & Deco">
+		<img class="promo-image" src="/assets/components/products/images/7HD01N6/7HD01N6_LU_00.jpg" alt="骨瓷罐"/>
+		<h4 class="promo-text text-center full">骨瓷罐</h4>
+		<div class="btn btn-primary full">探索</div>
+	</a>
+</li>
+</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--  sub-navigation -->
+			<div id="nav-section-13" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">按接收者</span></li>
+<li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/for-women" title="Gifts for her">女士礼品</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/for-men" title="Gifts for him">男士礼品</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/dragon-lovers" title="Dragon lovers">龙爱好者</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">按场合</span></li>
+<li><a class="section-link" data-section="Gifts" href="/cn-cn/mothers-day-selection/2017" title="Mother's day gifts">母亲节礼品</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/selection-wedding" title="Wedding gifts">婚礼</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/selection-farewell" title="Farewell gifts">赠别礼遇</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/selection-housewarming" title="Housewarming gifts">乔迁之喜</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/selection-baby-shower" title="Baby shower gifts">新生悦礼</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/selection-graduation" title="Graduation gifts">毕业</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">必备</span></li>
+<li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/scarves" title="Scarves">围巾</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/silk-cashmere-cardigan" title="Cashmere cardigans with silk lining">羊绒丝绸里衬开衫</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/world-of-shanghai-tang/the-renaissance-of-polo" title="Polo shirts">Polo衫</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/home/sleepwear" title="Sleepwear">睡衣</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/world-of-shanghai-tang/sunglasses" title="Sunglasses">太阳眼镜</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/accessories/women/cloud-quilted-collection" title="Quilted cloud leather accessories for women">女士祥云真皮夹棉系列</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/tech-accessories-men-women" title="iPhone cases">iPhone手机壳</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/world-of-shanghai-tang/ginger-flower" title="Home fragrance">家居香氛</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/home/scented-candles" title="Scented candles">香氛蜡烛</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/world-of-shanghaitang/lacquered-boxes" title="Lacquered boxes">漆盒</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/bone-china-selection" title="Bone china serveware">骨瓷餐具</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/fragrance/silk-road-fragrance-collection" title="Fragrance for men and women">香水</a></li><li><a class="section-link" data-section="Gifts" href="/cn-cn/gifts/star-leather-collection" title="Star leather wallets">星形皮革系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li class="promo-section-element">
+	<a href="/gifts/for-women" title="Gifts">
+		<img class="promo-image" src="/assets/components/landing/img/cropped/cropped_19130_1487819200.jpg" alt="女士礼品"/>
+		<h4 class="promo-text text-center full">女士礼品</h4>
+		<div class="btn btn-primary full">Find the perfect Gift</div>
+	</a>
+</li>
+</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--  sub-navigation -->
+			<div id="nav-section-179" class="collapse navigation navigation-sub hidden-xs">
+				<div class="container">
+					<div class="navigation-sub-content">
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">关于我们</span></li>
+<li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/our-story" title="Our story">品牌故事</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/our-DNA" title="Our DNA">品牌DNA</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/products-universe" title="Our product universe">产品系列</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/careers" title="Your career at Shanghai Tang">上海滩职业发展机会</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">将中国介绍给世界</span></li>
+<li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/know-how" title="Our 'Metiers d'Art'">品牌工艺</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/our-inspiration" title="Our inspiration">灵感来源</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li><span class="navigation-section-header">上海滩体验</span></li>
+<li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/shopping-experience" title="Our shopping experience">购物体验</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/iconic_products" title="12 iconic products">经典产品</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/ready-to-wear-collections" title="Ready-to-Wear collections">成衣</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/the-art-of-tailoring" title="The Art of Tailoring">量身御制</a></li><li><span class="navigation-section-header">关心社会</span></li>
+<li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/world-of-shanghai-tang/cancer-fund-charity" title="Cancer Fund Charity">癌症基金慈善机构</a></li><li><a class="section-link" data-section="World of Shanghai Tang" href="/cn-cn/eco-chic/kevin-germanier-2016" title="EcoChic Collection">生态时尚胶囊系列</a></li>					</ul>
+					<ul class="col-sm-3 col-lg-3 col-md-3 nav nav-pills nav-stacked">
+<li class="promo-section-element">
+	<a href="//world-of-shanghai-tang/sunglasses" title="World of Shanghai Tang">
+		<img class="promo-image" src="/assets/components/landing/img/cropped/cropped_18223_1494560089.jpg" alt="Exclusive sunglasses"/>
+		<h4 class="promo-text text-center full">Exclusive sunglasses</h4>
+		<div class="btn btn-primary full">探索</div>
+	</a>
+</li>
+</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+				</div>
+			</div>
+
+		
+		<div id="content" class="container">
+			
+<script>
+var pageCategory = "Homepage";
+var pageSubCategory = "20160129 - garysb";
+</script>
+
+
+<div class="row lookbook">
+	<ul class="list-unstyled landing lookbook ">
+		<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="0" data-column="0">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_19977_1497857844.jpg" alt="" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4><font face="Helvetica Neue, Helvetica, Arial, Tahoma, sans-serif"><span>季末折扣</span></font></h4></div>
+				<div class="text">线上线下折扣同步进行</div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/Sale/view-all-women">立即购买</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-1" data-row="0" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_19979_1497858043.jpg" alt="" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				
+				
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/Sale/view-all-women">立即购买</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-1" data-row="1" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_19981_1497858090.jpg" alt="" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				
+				
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/Sale/view-all-men">立即购买</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="2" data-column="0">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18888_1496052400.jpg" alt="Jacky Tsai capsule" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>Jacky Tsai 系列<br></h4></div>
+				<div class="text"><br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/women/jacky-tsai-capsule">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="2" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18890_1496052403.jpg" alt="" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>丝绸方巾</h4></div>
+				<div class="text">上海滩丝绸方巾是一件可以穿的艺术品。每一条奢华方巾都采用轻盈丝绸制作，传达中国传统意象，例如菊花、中国陶瓷、龙、凤等。<br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/accessories/women-squares">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="4" data-column="0">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_19336_1496052393.jpg" alt="naadam" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>女士手拿包</h4></div>
+				<div class="text">细节之处尽显优雅。上海滩晚宴手包饰有扇形图案、蒙古风拼接设计、中国结和流苏等精美细节，彰显现代中式别致风情，轻松搭配任何服饰。 <br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/women/clutches">浏览</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="4" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18886_1496052397.jpg" alt="ss17" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>女士春夏2017系列<br></h4></div>
+				<div class="text"><br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/women/spring-summer/2017">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="6" data-column="0">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18327_1496052386.jpg" alt="" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>男士外太极夹克<br></h4></div>
+				<div class="text">上海滩外套以其高超复杂的制作技艺而享誉世界。从羊毛混纺短大衣到皮质夹克，时尚剪裁大衣或夹克是衣柜中必不可少的百搭单品，可与您最喜爱的运动鞋进行搭配。<br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/men/jackets">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="6" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18223_1496052389.jpg" alt="" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>太阳镜<br></h4></div>
+				<div class="text">上海滩太阳镜崇尚复古与浪漫风尚，从中国经典圆框设计中汲取灵感，与时尚元素相结合。色彩明丽，多色可选，可轻松搭配任何服饰。 <br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/world-of-shanghai-tang/sunglasses">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="8" data-column="0">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18105_1496052353.jpg" alt="star leather" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>星形皮革系列</h4></div>
+				<div class="text">"五行星"- 在中国的五星红旗上的也能看见的，象征了中国人民的团结。携带这五行星产品会给您带来和谐幸福。<br></div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/gifts/star-leather-collection">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-2" data-row="8" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_18221_1496052356.jpg" alt="shirts" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>男士时尚POLO衫</h4></div>
+				<div class="text">经典Polo衫永不过时，是您衣柜中必不可少的百搭单品</div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/men/smart-polo-shirts">购物</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-1" data-row="14" data-column="0">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_15405_1483607951.jpg" alt="Macau store image" />
+	<div class="image-text text-content theme-light">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>我们的店铺</h4></div>
+				<div class="text">查看店铺信息，访问我们的实体店</div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/locate-a-store">点击这里</a>
+			
+		</div>
+	</div>
+</li>
+<li class="lookbook-block lookbook-col-2 lookbook-row-1" data-row="14" data-column="2">
+	<img class="lookbook-image linked" data-appear-top-offset="400" src="/assets/components/landing/img/cropped/cropped_16753_1483607949.jpg" alt="Imperial tailoring" />
+	<div class="image-text text-content theme-dark">
+		<div class="frame-wrapper">
+			<div class="frame"></div>
+		</div>
+		<div class="middle">
+			
+				<div class="header"><h4>量身御制系列</h4></div>
+				<div class="text">我们的高级量身御制系列</div>
+				<a class="btn btn-ghost btn-secondary" href="/cn-cn/the-art-of-tailoring">查看更多</a>
+			
+		</div>
+	</div>
+</li>
+
+		<div class="col-lg-1"></div>
+	</ul>
+</div>
+
+<!-- product catalog -->
+<div class="row product catalog">
+
+	
+	<!-- Desktop Version -->
+	
+
+	
+
+	<!-- Product List -->
+	
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			
+			<ul id="product-set" class="row list-unstyled landing catalog">
+				
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		
+	</div>
+
+	<script>
+		var landingID = "1975";
+	</script>
+
+
+
+		</div>
+				<!-- default footer -->
+		<footer>
+			
+			<div id="eupopup-wrapper">
+			</div>
+			<div>
+				<div class="newsletter">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
+								<div class="row">
+
+									<!-- extra content -->
+									<div class="col-sm-12 list-unstyled footer-extra signup">
+										
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-7">
+											<div style="float:left;">
+												<p>通过其他方式了解我们</p>
+												<ul class="list-unstyled social-icon-list">
+													
+				<a class="social-icon youku" target="_blank" href="http://i.youku.com/u/UMzEzODEwNTcxNg=="><li class="icon-social-youku" data-network="youku"></li></a>
+				
+													<li><a class="social-icon weibo" target="_blank" href="http://www.weibo.com/shanghaitangchina" data-network="weibo"><i class="icon-social-weibo"></i></a></li>
+												</ul>
+											</div>
+											<div style="float:right;"><img  src="/assets/components/stores/img/wechat_qr.jpg" alt="wechat" width="70" height="70"/><br/><a target="_blank" style="margin-left: 6px;" href="http://mp.weixin.qq.com/s/XV69aKW3WGLhtJNtYt9spw">点击此处</a></div>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+											<p>关注我们</p>
+											<button type="button" class="btn btn-newsletter" data-toggle="modal" data-target="#newsletterModal">
+												订阅上海滩邮件
+											</button>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- link content -->
+				<div class="footer-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
+								<div class="sValue" data-snippet="Navigation.getFooter" data-param="store=true;class=col-xs-6 col-sm-6 col-md-3 col-lg-3"></div>
+								<span style="clear:both;" class="sValue" data-snippet="getICP"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+        <script>
+            (function(){
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+                var elts = document.getElementsByTagName("a");
+                var i;
+
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv:11./))
+                {
+                    for (i = 0; i < elts.length; i++) {
+                        elts[i].attributes["disabled"] = "disabled";
+                    }
+                }
+                else
+                {
+                    for (i = 0; i < elts.length; i++) {
+                        elts[i].style["pointer-events"] = "none";
+                    }
+                }
+            })();
+        </script>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="/assets//html5shiv.js"></script>
+		<script src="/assets//respond.min.js"></script>
+		<![endif]-->
+
+		<script src="/code.js?v=20170303"></script>
+		<div class="sValue hidden" id="csrfToken" data-snippet="Cart.getCSRFToken"></div>
+		<div class="sValue hidden" data-snippet="Cart.verifySession"></div>
+		<script type="application/ld+json">
+		{
+			"@context" : "http://schema.org",
+			"@type" : "Organization",
+			"name" : "Shanghai Tang",
+			"url" : "http://www.shanghaitang.com",
+			"sameAs" : [
+				"https://www.facebook.com/shanghaitang",
+				"https://twitter.com/shanghaitang",
+				"https://plus.google.com/+shanghaitang",
+				"https://www.pinterest.com/shanghaitang",
+				"http://weibo.com/shanghaitangchina"
+			]
+		}
+		</script>
+	<script type="text/javascript" src="assets/components/theme/js/messages_zh.js"></script>
+</body></html>

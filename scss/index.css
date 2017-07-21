@@ -1,0 +1,128 @@
+.content {
+  margin-bottom: 1.65rem; }
+  .content ul.banxin {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 86%;
+    margin: 0 auto; }
+    .content ul.banxin li {
+      width: 48.5%;
+      position: relative;
+      margin-top: 1.65rem;
+      z-index: 1; }
+      .content ul.banxin li img {
+        display: block;
+        width: 100%;
+        height: 100%; }
+      .content ul.banxin li .ceng {
+        background: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0%;
+        height: 0%;
+        text-align: center;
+        border: 1px solid #fff;
+        transition: 0.8s; }
+        .content ul.banxin li .ceng .zhong {
+          opacity: 0;
+          transition: 0.8s; }
+    .content ul.banxin li:hover .ceng {
+      background: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 96%;
+      height: 96%;
+      text-align: center;
+      border: 1px solid #fff; }
+      .content ul.banxin li:hover .ceng .zhong {
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 22%;
+        height: 10%;
+        color: #fff; }
+        .content ul.banxin li:hover .ceng .zhong h3 {
+          font: 600 1.4rem ""; }
+        .content ul.banxin li:hover .ceng .zhong p {
+          font: 1.2rem "";
+          margin: 1rem 0; }
+        .content ul.banxin li:hover .ceng .zhong a {
+          color: #fff;
+          display: inline-block;
+          line-height: 2rem;
+          width: 4rem;
+          text-align: center;
+          border: 1px solid #fff; }
+        .content ul.banxin li:hover .ceng .zhong a:hover {
+          background: rgba(0, 0, 0, 0.4); }
+    .content ul.banxin li.te .tete {
+      margin-top: 2rem; }
+    .content ul.banxin li.te .tebox {
+      position: relative; }
+      .content ul.banxin li.te .tebox .ceng01 {
+        background: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 0%;
+        height: 0%;
+        text-align: center;
+        border: 1px solid #fff;
+        transition: 0.8s; }
+        .content ul.banxin li.te .tebox .ceng01 .zhong01 {
+          opacity: 0;
+          transition: 0.8s; }
+    .content ul.banxin li.te .tebox:hover .ceng01 {
+      background: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 96%;
+      height: 96%;
+      text-align: center;
+      border: 1px solid #fff; }
+      .content ul.banxin li.te .tebox:hover .ceng01 .zhong01 {
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 22%;
+        height: 10%;
+        color: #fff; }
+        .content ul.banxin li.te .tebox:hover .ceng01 .zhong01 a {
+          color: #fff;
+          display: inline-block;
+          line-height: 2rem;
+          width: 4rem;
+          text-align: center;
+          border: 1px solid #fff; }
+        .content ul.banxin li.te .tebox:hover .ceng01 .zhong01 a:hover {
+          background: rgba(0, 0, 0, 0.4); }
+
+@media screen and (max-width: 850px) {
+  .content ul.banxin li {
+    width: 100%; } }
+
+/*# sourceMappingURL=index.css.map */
